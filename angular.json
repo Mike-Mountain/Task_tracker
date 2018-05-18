@@ -46,7 +46,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/assets/Sass/styles.scss",
               "node_modules/bulma/css/bulma.css"
             ],
             "scripts": []
