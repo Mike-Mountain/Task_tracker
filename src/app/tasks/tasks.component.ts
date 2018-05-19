@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Task } from '../task-template';
+import { TASKS } from '../mock-tasks';
 
 @Component({
   selector: 'app-tasks',
@@ -19,5 +20,7 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  tasks = TASKS;
 
 }
