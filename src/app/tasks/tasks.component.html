@@ -1,11 +1,11 @@
-<h2>My Tasks</h2>
 <ul class="tasks">
   <li *ngFor = "let task of tasks">
-    <span class="badge">{{task.id}}</span> {{task.name}}<br><br> summary: <br> {{ task.summary }}
+    <span class="badge">task-{{task.id}}</span><span class="name"> {{task.name}}</span><span class="summary has-text-left"><br><br><br> {{ task.summary }}</span>
+    <!-- <div class="input">
+      <label>summary: 
+        <input [(ngModel)] = "task.summary" placeholder = "Summary">
+      </label>
+    </div> -->
+    <br>
   </li>
 </ul>
-<div>
-  <label>summary: 
-    <input [(ngModel)] = "task.summary" placeholder = "Summary">
-  </label>
-</div>

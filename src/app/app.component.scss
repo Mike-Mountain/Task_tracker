@@ -1,8 +1,18 @@
 @import '../assets/Sass/variables';
 
-.app-title {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: $blue;
-    color: $light_blue;
+.column-head {
+    height: 85px;
+}
+
+.page {
+    width: 95%;
+    margin: auto;
+}
+
+.tile.is-child {
+    background-color: #edf8f9;
+}
+
+.col-head {
+    color: $orange;
 }
