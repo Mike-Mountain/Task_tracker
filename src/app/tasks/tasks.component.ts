@@ -10,17 +10,17 @@ import { TASKS } from '../mock-tasks';
 })
 export class TasksComponent implements OnInit {
 
-  task: Task = {
-    id: 1,
-    name: 'TaskTracker',
-    summary: 'Build TaskTracker'
-  }
+  tasks = TASKS;
+
+  selectedTask: Task;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  tasks = TASKS;
+  onSelect(task: Task) {
+    this.selectedTask = task;
+  }
 
 }
