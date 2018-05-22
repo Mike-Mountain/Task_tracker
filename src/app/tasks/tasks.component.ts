@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Task } from '../task-template';
-import { TASKS } from '../mock-tasks';
+import { TaskInfoService } from '../task-info.service';
 
 @Component({
   selector: 'app-tasks',
@@ -10,15 +10,18 @@ import { TASKS } from '../mock-tasks';
 })
 export class TasksComponent implements OnInit {
 
-  tasks = TASKS;
+  tasks: Task[];
 
   selectedTask: Task;
 
   isModalActive: boolean = false;
 
-  constructor() { }
+  constructor(private taskInfoService: TaskInfoService) { }
 
   ngOnInit() {
+    this.fetchTasks;
+    console.log("Tasks: " + this.taskInfoService.getTasks());
+    console.log("This Tasks: " + this.tasks); 
   }
 
   onSelect(task: Task) {
@@ -29,4 +32,8 @@ export class TasksComponent implements OnInit {
     this.isModalActive = !this.isModalActive;
   }
 
+  fetchTasks() {
+    this.tasks = this.taskInfoService.getTasks();
+  }
+  
 }
