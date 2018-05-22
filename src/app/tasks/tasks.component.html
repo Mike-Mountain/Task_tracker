@@ -21,7 +21,9 @@
       <app-task-detail [task] = "selectedTask"></app-task-detail>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success is-one-third">Save Changes</button>
+      <button class="button is-success is-one-third" 
+        aria-label="save" 
+        (click)="toggleModal()">Save Changes</button>
       <button class="button is-danger is-one-third">Delete</button>
       <button class="button is-one-third" (click)="toggleModal()">Cancel</button>
     </footer>
