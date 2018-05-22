@@ -14,6 +14,8 @@ export class TasksComponent implements OnInit {
 
   selectedTask: Task;
 
+  isModalActive: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +23,10 @@ export class TasksComponent implements OnInit {
 
   onSelect(task: Task) {
     this.selectedTask = task;
+  }
+
+  toggleModal() {
+    this.isModalActive = !this.isModalActive;
   }
 
 }
