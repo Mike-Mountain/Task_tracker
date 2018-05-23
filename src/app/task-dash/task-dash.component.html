@@ -1,0 +1,14 @@
+<div class="container dash">
+    <div class="content">
+      <h2 class="page-title">Dash View</h2>
+        <div class="columns">
+          <a *ngFor="let task of tasks" 
+            class="column"
+            routerLink="/detail/{{ task.id }}">
+            <div class="module taks">
+              <h4>{{ task.name }}</h4>
+            </div>
+          </a>
+        </div>
+    </div>
+  </div>
