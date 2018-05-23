@@ -11,7 +11,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TasksBoardComponent } from './tasks-board/tasks-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TaskDashComponent } from './task-dash/task-dash.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { TaskDashComponent } from './task-dash/task-dash.component';
     MessagesComponent,
     TasksBoardComponent,
     DashboardComponent,
-    TaskDashComponent
   ],
   imports: [
     BrowserModule,
