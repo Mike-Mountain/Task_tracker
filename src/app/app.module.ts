@@ -10,6 +10,8 @@ import { TaskInfoService } from './task-info.service';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TasksBoardComponent } from './tasks-board/tasks-board.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TaskDashComponent } from './task-dash/task-dash.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TasksBoardComponent } from './tasks-board/tasks-board.component';
     HeaderComponent,
     TaskDetailComponent,
     MessagesComponent,
-    TasksBoardComponent
+    TasksBoardComponent,
+    DashboardComponent,
+    TaskDashComponent
   ],
   imports: [
     BrowserModule,
