@@ -9,6 +9,7 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { TaskInfoService } from './task-info.service';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { TasksBoardComponent } from './tasks-board/tasks-board.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './/app-routing.module';
     TasksComponent,
     HeaderComponent,
     TaskDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    TasksBoardComponent
   ],
   imports: [
     BrowserModule,

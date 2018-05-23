@@ -4,45 +4,8 @@
 <br>
 <div class="page has-text-centered">
   <app-messages></app-messages>
-  <div class="tile is-ancestor">
-
-    <div class="tile is-parent column-head is-4">
-      <div class="tile is-child box">
-        <h3 class="col-head">To Do</h3>
-      </div>
-    </div>
-
-    <div class="tile is-parent column-head is-4">
-      <div class="tile is-child box">
-        <h3 class="col-head">In Progress</h3>
-      </div>
-    </div>
-
-    <div class="tile is-parent column-head is-4">
-      <div class="tile is-child box">
-        <h3 class="col-head">Completed</h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="tile is-ancestor">
-    <div class="tile is-parent taskToDo is-4">
-      <div class="tile is-child box col-body">
-        <app-tasks></app-tasks>        
-      </div>
-    </div>
-
-    <div class="tile is-parent taskInProgress is-4">
-      <div class="tile is-child box col-body">
-        
-      </div>
-    </div>
-
-    <div class="tile is-parent taskComplete is-4">
-      <div class="tile is-child box col-body">
-
-      </div>
-    </div>
-
-  </div>
+  <a routerLink="/tasks-board">
+    <button class="button is-success">Task Board</button>
+  </a>
+  <router-outlet></router-outlet>
 </div>
