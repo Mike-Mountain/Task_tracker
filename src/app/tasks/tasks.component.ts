@@ -19,9 +19,7 @@ export class TasksComponent implements OnInit {
   constructor(private taskInfoService: TaskInfoService) { }
 
   ngOnInit() {
-    this.fetchTasks;
-    console.log("Tasks: " + this.taskInfoService.getTasks());
-    console.log("This Tasks: " + this.tasks); 
+    this.fetchTasks();
   }
 
   onSelect(task: Task) {
@@ -33,7 +31,8 @@ export class TasksComponent implements OnInit {
   }
 
   fetchTasks() {
-    this.tasks = this.taskInfoService.getTasks();
+    this.taskInfoService.getTasks()
+      .subscribe(tasks => this.tasks = tasks);
   }
   
 }
