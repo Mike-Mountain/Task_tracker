@@ -1,20 +1,9 @@
 @import '../../assets/Sass/variables';
 
-.hero {
-    background-color: $blue;
-    a {
-        color: $light_blue !important;
-    }
-    .active {
-        color: $orange !important;
-    }
+.navbar-item img {
+    max-height: 2.5rem !important;
 }
 
-.title {
-    color: $light_blue;
+.navbar {
+    opacity: 0.9;
 }
-
-.subtitle {
-    color: $light_blue;
-}
-

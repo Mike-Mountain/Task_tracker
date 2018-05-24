@@ -1,18 +1,18 @@
+@import '../../assets/Sass/variables';
+
 .sidebar {
-    width: 65px;
-    border: 1px solid black;
-    min-height: 100% !important;
-    float: left;
-    position: sticky;
+    background-color: #edf8f9;
+    min-height: 100%;
+    border-right: 1px solid $light-blue
 }
 
 .logo {
-    margin: 75px 0; 
     img {
+    margin: 75px 5px 75px 0; 
     width: 3.3em;
     }
 }
 
 .menu-item {
-    margin: 120px 0;
+    margin: 90px 0;
 }

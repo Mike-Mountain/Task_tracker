@@ -1,40 +1,60 @@
-<section class="hero is bold">
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a routerLink="/dashboard">
-            <img src="../../assets/Images/mountainWeb.png">
-          </a>
-        </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar-end">  
-            <a class="navbar-item" routerLink="/dashboard">
-              Home
-            </a>
+<header class="tasks-header">
+  <nav class="navbar is-fixed-top is-dark">
+    
+    <div class="navbar-brand">
+      <a class="navbar-item" routerLink="/dashboard">
+        <img src="../../assets/Images/Tracker-logo.png" alt="site logo">
+      </a>
+      <div class="navbar-burger burger" data-target="navbarBottomNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarBottomNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" routerLink="/dashboard">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">
+            TaskTracker
+          </div>
+          <div class="navbar-dropdown is-boxed">
             <a class="navbar-item" routerLink="/tasks-board">
-              Tasks
+              Task Board
             </a>
             <a class="navbar-item">
-              Projects
-            </a>      
+              To Do
+            </a>
             <a class="navbar-item">
-              About
-            </a>      
-          </div>  
+              In Progress
+            </a>
+            <a class="navbar-item">
+              Complete
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
-  </div>
 
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        {{ title }}
-      </h1>
-      <h2 class="subtitle">
-        {{ subtitle }}
-      </h2>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-dark is-inverted" href="https://github.com/Mike8327/Task_tracker" target=_blank>
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>
+                  Github
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+
+  </nav>
+</header>
