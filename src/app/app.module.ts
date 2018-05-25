@@ -13,6 +13,7 @@ import { TasksBoardComponent } from './tasks-board/tasks-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PriorityWidgetComponent } from './priority-widget/priority-widget.component';
+import { RecentTasksComponent } from './recent-tasks/recent-tasks.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PriorityWidgetComponent } from './priority-widget/priority-widget.compo
     DashboardComponent,
     SidebarComponent,
     PriorityWidgetComponent,
+    RecentTasksComponent,
   ],
   imports: [
     BrowserModule,
