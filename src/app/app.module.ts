@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PriorityWidgetComponent } from './priority-widget/priority-widget.component';
 import { RecentTasksComponent } from './recent-tasks/recent-tasks.component';
+import { SnipCodeComponent } from './snip-code/snip-code.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RecentTasksComponent } from './recent-tasks/recent-tasks.component';
     SidebarComponent,
     PriorityWidgetComponent,
     RecentTasksComponent,
+    SnipCodeComponent,
   ],
   imports: [
     BrowserModule,
