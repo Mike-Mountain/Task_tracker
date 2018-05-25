@@ -23,7 +23,6 @@
     "angular-cli-ghpages": "^0.5.2",
     "bulma": "^0.7.1",
     "core-js": "^2.5.4",
-    "prismjs": "^1.14.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
