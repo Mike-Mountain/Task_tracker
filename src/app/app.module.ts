@@ -12,6 +12,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { TasksBoardComponent } from './tasks-board/tasks-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PriorityWidgetComponent } from './priority-widget/priority-widget.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     TasksBoardComponent,
     DashboardComponent,
     SidebarComponent,
+    PriorityWidgetComponent,
   ],
   imports: [
     BrowserModule,
