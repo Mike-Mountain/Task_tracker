@@ -13,4 +13,7 @@
 .tabs.is-toggle a {
     border-color: white;
     color: white;
+    &:hover {
+        color: black;
+    }
 }
