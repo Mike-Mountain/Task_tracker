@@ -17,6 +17,7 @@ import { RecentTasksComponent } from './recent-tasks/recent-tasks.component';
 import { SnipCodeComponent } from './snip-code/snip-code.component';
 import { SnippetsComponent } from './snippets/snippets.component';
 import { DashSidebarComponent } from './dash-sidebar/dash-sidebar.component';
+import { SingleTaskComponent } from './single-task/single-task.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DashSidebarComponent } from './dash-sidebar/dash-sidebar.component';
     SnipCodeComponent,
     SnippetsComponent,
     DashSidebarComponent,
+    SingleTaskComponent,
   ],
   imports: [
     BrowserModule,

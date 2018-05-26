@@ -20,15 +20,13 @@
           </li>
         </ul>
       </div>
-      <ul>
-        <li *ngFor="let task of tasks">
-          <div class="card">
-            <div class="card-content">
-              {{ task.id }}.  {{ task.summary }}
-            </div>
+      <a *ngFor="let task of tasks" routerLink="/single-task/{{ task.id }}">
+        <div class="card">
+          <div class="card-content">
+            {{ task.id }}.  {{ task.summary }}
           </div>
-        </li>
-      </ul>
+        </div>
+      </a>
     </div>
   </div>
 </div>
