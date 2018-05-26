@@ -1,5 +1,7 @@
 <ul class="snippets">
   <li *ngFor="let snippet of snippets">
-    <pre><code class="prettyprint">{{ snippet.snippet }}</code></pre>
+    <div class="card">
+      <pre><code class="prettyprint linenums">{{ snippet.snippet }}</code></pre>
+    </div>
   </li>
 </ul>

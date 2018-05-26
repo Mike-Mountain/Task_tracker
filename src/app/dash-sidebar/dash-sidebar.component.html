@@ -1,0 +1,34 @@
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child box dash-sidebar">
+      <div class="tabs is-toggle is-full-width">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span>To Do</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>In Progress</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>Complete</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li *ngFor="let task of tasks">
+          <div class="card">
+            <div class="card-content">
+              {{ task.id }}.  {{ task.summary }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
