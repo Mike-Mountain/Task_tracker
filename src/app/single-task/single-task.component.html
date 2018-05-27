@@ -10,12 +10,13 @@
         <h4 class="task-summary">Description:</h4><br>
         {{task.Description}}
       </div>
-      <label>summary: 
-        <input [(ngModel)] = "task.summary" placeholder = "Summary">
+      <label>Title: 
+        <input [(ngModel)] = "task.Title" placeholder = "Title">
       </label>
     </div>
-    <div class="car-footer">
+    <div class="card-footer">
       <button (click)="goBack()" class="button is-info">go back</button>
+      <button (click)="save()" class="button is-success">save</button>
     </div>
   </div>
 </div>

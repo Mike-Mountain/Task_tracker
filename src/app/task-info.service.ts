@@ -7,10 +7,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Task } from './task-template';
 import { ReturnMessageService } from './return-message.service';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
-export class TaskInfoService {
+export class TaskInfoService { 
 
   constructor(
     private http: HttpClient,
@@ -22,6 +26,7 @@ export class TaskInfoService {
   }
 
   private tasksUrl = 'http://localhost:1337/task';
+  private taskId = 'http://localhost:1337/task/5afc8109c47ac03c8f61a56c';
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksUrl)
@@ -30,14 +35,42 @@ export class TaskInfoService {
         catchError(this.handleError('getTasks', []))
       );
   } 
-
-  /** GET hero by id. Will 404 if id not found */
+  
+  /** GET Task by id. Will 404 if id not found */
   getTaskDetail(id: string) {
     const url = `${this.tasksUrl}/${id}`;
     console.log(`${this.tasksUrl}/${id}`);
     return this.http.get<Task>(url).pipe(
       tap(_ => this.log(`Fetched Task id=${id}`)),
       catchError(this.handleError<Task>(`getTask id=${id}`))
+    );
+  }
+
+  /** PUT: update the Task on the server */
+  updateTask (task: Task, id: string): Observable<any> {
+    const tasksUpdateUrl = `${this.tasksUrl}/${id}`;
+    return this.http.put(tasksUpdateUrl, task, httpOptions).pipe(
+      tap(_ => this.log(`Updated task id=${task.id}`)),
+      catchError(this.handleError<any>('updatedTask'))
+    );
+  }
+
+  /** POST: add a new Task to the server */
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.tasksUrl, task, httpOptions).pipe(
+      tap((task: Task) => this.log(`added task w/ id=${task.id}`)),
+      catchError(this.handleError<Task>('addTask'))
+    )
+  }
+
+  /** DELETE: delete the Task from the server */
+  deleteTask(task: Task | number): Observable<Task> {
+    const id = typeof task === 'number' ? task : task.id;
+    const url = `${this.tasksUrl}/${id}`;
+
+    return this.http.delete<Task>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted task id=${id}`)),
+      catchError(this.handleError<Task>('deleteTask'))
     );
   }
 

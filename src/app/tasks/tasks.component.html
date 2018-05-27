@@ -3,10 +3,19 @@
     [class.selected] = "task === selectedTask" 
     (click) = "onSelect(task)"
     (click) = "toggleModal()">
-    <span class="badge">task-{{task.id}}</span><span class="name"> {{task.name}}</span><span class="summary has-text-left"><br><br><br> {{ task.summary }}</span>
+    <span class="badge">task-{{task.id}}</span><span class="name"> {{task.Title}}</span><span class="summary has-text-left"><br><br><br> {{ task.summary }}</span>
     <br>
   </li>
 </ul>
+<div>
+  <label>Task name:
+    <input #taskName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(taskName.value); taskName.value=''">
+    add
+  </button>
+</div>
 
 <!-- <div class="task">
   <div class="task-header">

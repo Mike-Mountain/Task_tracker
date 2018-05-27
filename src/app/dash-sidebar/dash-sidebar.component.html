@@ -20,13 +20,19 @@
           </li>
         </ul>
       </div>
-      <a *ngFor="let task of tasks" routerLink="/single-task/{{ task.id }}">
-        <div class="card">
-          <div class="card-content">
-            {{ task.id }}.  {{ task.summary }}
+      <ul class="dash-tasks">
+        <li *ngFor="let task of tasks">
+          <div class="card">
+            <a routerLink="/single-task/{{ task.id }}">
+              <div class="card-content">
+                {{ task.Title }}
+              </div>
+            </a>
+            <button class="delete button is-danger" title="delete task"
+            (click)="delete(task)"></button>
           </div>
-        </div>
-      </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

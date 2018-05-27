@@ -34,4 +34,9 @@ export class SingleTaskComponent implements OnInit {
     this.location.back();
   }
 
+  save() {
+    this.taskInfoService.updateTask(this.task, this.task.id)
+      .subscribe(() => this.goBack());
+  }
+
 }
