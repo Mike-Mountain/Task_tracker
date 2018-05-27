@@ -1,57 +1,55 @@
 @import '../../assets/Sass/variables';
 
-.tasks li {
+.task-details {
     border: 1px solid $orange;
     margin: 20px;
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    height: 150px;
     box-shadow: 0 0 1px 1px $orange;
     color: $green;
-    background-color: $light_orange;
+    // background-color: $light_orange;
     &:hover {
-        cursor: pointer;
-        
-    }
-    &.selected {
-        background-color: $light_blue;
-        box-shadow: 0 0 1px 1px $blue;
-        border-color: $blue;
-        color: $green;
+        cursor: move; 
     }
 }
 
-.name {
-    grid-column: 1/3;
-    grid-row: 2/3;
+.selected {
+    // background-color: $light_blue !important;
+    box-shadow: 0 0 1px 1px $blue !important;
+    border-color: $blue !important;
+    color: $green !important;
+    .show-more {
+        border-color: $blue !important;
+        box-shadow: 0 0 1px 1px $blue !important;
+    }
+}
+
+.task-id p {
+    color: $blue
+}
+
+p.priority {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 25px;
+    margin-left: 40%;
+}
+p.pr-high {
+    border-color: #980000;
+    background-color: rgb(204, 97, 97);
+}
+
+p.pr-mid {
+    border-color: $orange;
+    background-color: $light_orange;
+}
+
+p.pr-low {
+    border-color: #7def4c;
+    background-color: #acf48d;
+}
+
+.show-more {
     width: 100%;
-    font-weight: bold;
-    margin-left: 10px;
-    text-align: left;
-}
-
-.summary {
-    grid-column: 1/5;
-    grid-row: 2/3;
-    margin-left: 2em;
-    margin-top: -1em;
-    p {
-        text-decoration: underline;
-        margin-bottom: -10px;
-    }
-}
-
-.badge {
-    grid-column: 4/5;
-    grid-row: 4/5;
-    text-align: right;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-.delete {
-    grid-column: 1/5;
-    grid-row: 3/4;
+    border: $orange;
+    box-shadow: 0 0 1px 1px $orange;
 }

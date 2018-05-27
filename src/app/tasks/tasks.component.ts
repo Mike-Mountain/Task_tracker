@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 import { Task } from '../task-template';
 import { TaskInfoService } from '../task-info.service';
@@ -16,6 +17,8 @@ export class TasksComponent implements OnInit {
 
   isModalActive: boolean = false;
 
+  descBox = document.getElementById("descBox");
+
   constructor(private taskInfoService: TaskInfoService) { }
 
   ngOnInit() {
@@ -23,7 +26,11 @@ export class TasksComponent implements OnInit {
   }
 
   onSelect(task: Task) {
-    this.selectedTask = task;
+    if (this.selectedTask === null) {
+      this.selectedTask = task;
+    } else {
+      this.selectedTask = null;
+    }
   }
 
   toggleModal() {
@@ -44,9 +51,13 @@ export class TasksComponent implements OnInit {
       })
   }
 
-  delete(task: Task) {
-    this.tasks = this.tasks.filter(t => t !== task);
-    this.taskInfoService.deleteTask(task).subscribe;
-  } 
-  
+  readMore() {
+    this.descBox.style.display = "none";
+    if (this.descBox.style.display === "none") {
+      this.descBox.style.display = "block";
+    } else {
+      this.descBox.style.display = "none";
+    }
+  }
+
 }
