@@ -2,13 +2,13 @@
   <div class="card">
     <header calss="card-header">
       <p class="card-header-title">
-        {{task.name}}
+        {{task.Title}}
       </p>
     </header>
     <div class="card-content">
       <div calss="content">
-        <h4 class="task-summary">Summary:</h4><br>
-        {{task.summary}}
+        <h4 class="task-summary">Description:</h4><br>
+        {{task.Description}}
       </div>
       <label>summary: 
         <input [(ngModel)] = "task.summary" placeholder = "Summary">

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 import { Task } from './task-template';
-import { TASKS } from './mock-tasks';
 import { ReturnMessageService } from './return-message.service';
 
 @Injectable({
@@ -10,18 +12,53 @@ import { ReturnMessageService } from './return-message.service';
 })
 export class TaskInfoService {
 
-  constructor(private returnMessageService: ReturnMessageService) { }
+  constructor(
+    private http: HttpClient,
+    private returnMessageService: ReturnMessageService
+  ) { }
+
+  private log(message: string) {
+    this.returnMessageService.add('TaskService says: ' + message);
+  }
+
+  private tasksUrl = 'http://localhost:1337/task';
 
   getTasks(): Observable<Task[]> {
-    // TODO: send the message _after_ fetching the hearoes
-    this.returnMessageService.add('TaskService: Fetched Tasks');
-    return of(TASKS);
+    return this.http.get<Task[]>(this.tasksUrl)
+      .pipe(
+        tap(tasks => this.log('Fetched Tasks')),
+        catchError(this.handleError('getTasks', []))
+      );
   } 
 
-  getTaskDetail(id: number) {
-    //TODO: send the message _after_ fetching the task
-    this.returnMessageService.add(`TaskInfoService: Fetched Task id=${id}`);
-    return of(TASKS.find(task => task.id === id));
+  /** GET hero by id. Will 404 if id not found */
+  getTaskDetail(id: string) {
+    const url = `${this.tasksUrl}/${id}`;
+    console.log(`${this.tasksUrl}/${id}`);
+    return this.http.get<Task>(url).pipe(
+      tap(_ => this.log(`Fetched Task id=${id}`)),
+      catchError(this.handleError<Task>(`getTask id=${id}`))
+    );
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+    
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+    
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+    
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
 }

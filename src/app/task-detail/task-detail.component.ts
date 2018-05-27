@@ -11,6 +11,8 @@ export class TaskDetailComponent implements OnInit {
 
   @Input() task: Task;
 
+  empty: string = "Nothing to display."; 
+
   constructor() { }
 
   ngOnInit() {

@@ -25,7 +25,7 @@ export class SingleTaskComponent implements OnInit {
   }
 
   returnTask() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.taskInfoService.getTaskDetail(id)
       .subscribe(task => this.task = task);
   }
