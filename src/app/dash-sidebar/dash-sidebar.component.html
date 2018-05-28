@@ -1,9 +1,9 @@
-<div class="tile is-ancestor">
+<div class="tile is-ancestor" onload="init()">
   <div class="tile is-parent">
     <div class="tile is-child box dash-sidebar">
       <div class="tabs is-toggle is-full-width">
-        <ul>
-          <li class="is-active">
+        <ul id="dash-tabs">
+          <li>
             <a>
               <span>To Do</span>
             </a>
@@ -20,21 +20,37 @@
           </li>
         </ul>
       </div>
-      <ul class="dash-tasks">
-        <li *ngFor="let task of tasks">
-          <div class="card">
-            <div class="card-header has-text-right">
-              <button class="delete button is-danger" title="delete task"
-            (click)="delete(task)"></button>
-            </div>
-            <a routerLink="/single-task/{{ task.id }}">
-              <div class="card-content">
-                {{ task.Title }}
+      
+        <div class="tasks" id="todo">
+          <ul class="dash-tasks">
+            <li *ngFor="let task of tasks">
+              <div class="card">
+                <div class="card-header has-text-right">
+                  <button class="delete button is-danger" title="delete task"
+                (click)="delete(task)"></button>
+                </div>
+                <a routerLink="/single-task/{{ task.id }}">
+                  <div class="card-content">
+                    {{ task.Title }}
+                  </div>
+                </a>
               </div>
-            </a>
+            </li>
+          </ul>
+        </div>
+      <!-- <div class="tasks" id="in-progress">
+        <div class="card">
+          <div class="card-header has-text-right">
+            <button class="delete button is-danger" title="delete task"
+          (click)="delete(task)"></button>
           </div>
-        </li>
-      </ul>
+          <a routerLink="/single-task/{{ task.id }}">
+            <div class="card-content">
+              <p>In Progress</p>
+            </div>
+          </a>
+        </div>
+      </div>   -->
     </div>
   </div>
 </div>

@@ -22,6 +22,6 @@ export class TasksBoardComponent implements OnInit {
     this.taskInfoService.getTasks()
       .subscribe(tasks => this.tasks = tasks.slice(1,5));
   }
-
+  
 
 }

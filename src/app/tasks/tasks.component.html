@@ -1,85 +1,86 @@
 <ul class="tasks">
   <li *ngFor = "let task of tasks">
+    <div id=myTasks>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box task-details" [class.selected] = "task === selectedTask">
+            <div class="columns">
 
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="tile is-child box task-details" [class.selected] = "task === selectedTask">
-          <div class="columns">
-
-            <div class="column is-8">
-              <div class="task-title colm">
-                <a class="subtitle">{{ task.Title }}</a>
+              <div class="column is-8">
+                <div class="task-title colm">
+                  <a class="subtitle">{{ task.Title }}</a>
+                </div>
               </div>
+
+              <div class="column">
+                <div class="task-id colm has-text-centered">
+                  <p>-Task-id-</p>
+                </div>
+              </div>
+
             </div>
+            <div class="columns has-text-centered">
 
-            <div class="column">
-              <div class="task-id colm has-text-centered">
-                <p>-Task-id-</p>
-              </div>
-            </div>
+              <div class="column">
+                <div class="task-category button colm">
+                  <p class="category">{{task.Category}}</p>
+                </div>
+              </div>    
 
-          </div>
-          <div class="columns has-text-centered">
-
-            <div class="column">
-              <div class="task-category button colm">
-                <p class="category">{{task.Category}}</p>
-              </div>
-            </div>    
-
-            <div class="column">
-              <div class="task-priority colm has-text-centered">
-                <p class="priority">
-                  {{ task.Priority }}
-                </p>
-              </div>
-            </div>
-
-            <div class="column">
-              <div class="task-date colm">
-                <p class="date">-Due Date-</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="columns">
-
-            <div class="column">
-              <div *ngIf="task === selectedTask">
-                <div class="task-description box" id="descBox">
-                  <p class="description">
-                    {{ task.Description }}
+              <div class="column">
+                <div class="task-priority colm has-text-centered">
+                  <p class="priority">
+                    {{ task.Priority }}
                   </p>
-                  <br>
-                  <div class="level">
-                    <div class="level-left">
-                      <div class="level-item">
-                        <div class="button is-small modal-btn" (click)="toggleModal()">Open Modal</div>
-                      </div>
-                    </div>
-                    <div class="level-right">
-                      <div class="level-item">
-                        <div class="button is-small is-danger" (click)="delete(task)">Delete</div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <br>
               </div>
-              <a class="button show-more is-light" (click) = "onSelect(task)">
-                <div class="show/hide">
-                  <div *ngIf="task === selectedTask">
-                    <div class="icon">
-                      <i class="fas fa-angle-up"></i>
-                    </div>
-                  </div>
-                  <div *ngIf="task != selectedTask">
-                    <div class="icon">
-                      <i class="fas fa-angle-down"></i>
-                    </div>
-                  </div>
+
+              <div class="column">
+                <div class="task-date colm">
+                  <p class="date">-Due Date-</p>
                 </div>
-              </a>
+              </div>
+
+            </div>
+            <div class="columns">
+
+              <div class="column">
+                <div *ngIf="task === selectedTask">
+                  <div class="task-description box" id="descBox">
+                    <p class="description">
+                      {{ task.Description }}
+                    </p>
+                    <br>
+                    <div class="level">
+
+                        <div class="level-item">
+                          <div class="button is-small modal-btn" (click)="toggleModal()">Open Modal</div>
+                        </div>
+
+  
+                        <div class="level-item">
+                          <div class="button is-small is-danger" (click)="delete(task)">Delete</div>
+                        </div>
+
+                    </div>
+                  </div>
+                  <br>
+                </div>
+                <a class="button show-more is-light" (click) = "onSelect(task)">
+                  <div class="show/hide">
+                    <div *ngIf="task === selectedTask">
+                      <div class="icon">
+                        <i class="fas fa-angle-up"></i>
+                      </div>
+                    </div>
+                    <div *ngIf="task != selectedTask">
+                      <div class="icon">
+                        <i class="fas fa-angle-down"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
