@@ -14,6 +14,8 @@ export class SingleTaskComponent implements OnInit {
 
   @Input() task: Task;
 
+  tasks: Task[];
+
   constructor(
     private route: ActivatedRoute,
     private taskInfoService: TaskInfoService,
@@ -39,4 +41,9 @@ export class SingleTaskComponent implements OnInit {
       .subscribe(() => this.goBack());
   }
 
+  delete(task: Task) {
+    this.tasks = this.tasks.filter(t => t !== task);
+    this.taskInfoService.deleteTask(task).subscribe();
+  }
+  
 }

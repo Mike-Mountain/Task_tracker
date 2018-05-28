@@ -53,3 +53,15 @@ p.pr-low {
     border: $orange;
     box-shadow: 0 0 1px 1px $orange;
 }
+
+.modal-card-body {
+    display: flex;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close-modal-sml {
+    margin-left: -30px;
+    margin-top: 5px;
+    z-index: 9999999;
+}

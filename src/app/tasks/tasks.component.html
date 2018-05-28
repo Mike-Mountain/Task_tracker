@@ -14,7 +14,7 @@
 
             <div class="column">
               <div class="task-id colm has-text-centered">
-                <p>task-id</p>
+                <p>-Task-id-</p>
               </div>
             </div>
 
@@ -37,7 +37,7 @@
 
             <div class="column">
               <div class="task-date colm">
-                <p class="date">09 Jan</p>
+                <p class="date">-Due Date-</p>
               </div>
             </div>
 
@@ -47,11 +47,22 @@
             <div class="column">
               <div *ngIf="task === selectedTask">
                 <div class="task-description box" id="descBox">
-                  <p class="description has-text-left">
+                  <p class="description">
                     {{ task.Description }}
                   </p>
                   <br>
-                  <div class="button is-small modal-btn" (click)="toggleModal()">Open Modal</div>
+                  <div class="level">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <div class="button is-small modal-btn" (click)="toggleModal()">Open Modal</div>
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <div class="button is-small is-danger" (click)="delete(task)">Delete</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <br>
               </div>
@@ -80,24 +91,12 @@
 
 <div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
   <div class="modal-background" (click)="toggleModal()"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Task Name</p>
-      <button class="delete" 
-        aria-label="close"
-        (click)="toggleModal()"></button>
-    </header>
-    <section class="modal-card-body">
-      <app-single-task [task] = "selectedTask"></app-single-task>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success is-one-third" 
-        aria-label="save" 
-        (click)="toggleModal()">Save Changes</button>
-      <button class="button is-danger is-one-third">Delete</button>
-      <button class="button is-one-third" (click)="toggleModal()">Cancel</button>
-    </footer>
-  </div>
+  <section class="modal-card-body">
+    <app-single-task [task] = "selectedTask"></app-single-task>
+    <button class="close-modal-sml delete" 
+    aria-label="close"
+    (click)="toggleModal()"></button>
+  </section>
   <button class="modal-close is-large" 
     aria-label="close" 
     (click)="toggleModal()"></button>

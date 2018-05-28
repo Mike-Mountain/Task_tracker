@@ -6,17 +6,30 @@
       </p>
     </header>
     <div class="card-content">
-      <div calss="content">
-        <h4 class="task-summary">Description:</h4><br>
-        {{task.Description}}
+      <div class="box">
+        <h4>Description</h4>
+        <!-- <label>
+          <input [(ngModel)] = "task.Description" placeholder = "Description">
+        </label> -->
+        <div class="content">
+          <pre contenteditable="true">{{ task.Description }}</pre> 
+        </div>
       </div>
-      <label>Title: 
-        <input [(ngModel)] = "task.Title" placeholder = "Title">
-      </label>
     </div>
     <div class="card-footer">
-      <button (click)="goBack()" class="button is-info">go back</button>
-      <button (click)="save()" class="button is-success">save</button>
+      <div class="level">
+        <p class="level-item">
+          <button (click)="goBack()" class="button is-info">Go back</button>
+        </p>
+
+        <p class="level-item">
+          <button (click)="save()" class="button is-success">Save</button>
+        </p>
+
+        <p class="level-item">
+          <button (click)="delete(task)" class="button is-danger">Delete</button>
+        </p>
+      </div>
     </div>
   </div>
 </div>
