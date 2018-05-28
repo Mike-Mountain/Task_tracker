@@ -1,0 +1,111 @@
+<div class="tile is-ancestor">
+  <div class="tile is-parent container">
+    <div class="tile is-child box new-task">
+      <nav class="level">
+        <!-- Left Side -->
+        <div class="level-left">
+          <div class="level-item">
+            <!--  -->
+            <div class="field has-addons">
+              <p class="control">
+                <button class="button">
+                  Search
+                </button>
+              </p>
+              <p class="control">
+                <input class="input search-input" type="text" placeholder="Find a task">
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="level-right">
+          <p class="level-item">
+            <button class="button" 
+              (click)="add(taskTitle.value, taskPriority.value, taskDescription.value, taskCategory.value, taskDueDate.value, taskComments.value);"
+              routerLink="/dashboard">
+              Add
+            </button>
+          </p>
+        </div>
+      </nav>
+      <!-- Form -->
+      <div class="box add-task-box">
+        
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input #taskTitle class="input" type="text">
+          </div>
+        </div>
+
+        <div class="columns">
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Priority</label>
+              <div class="control">
+                <div class="select">
+                  <select #taskPriority>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Category</label>
+              <div class="control">
+                <div class="select">
+                  <select #taskCategory>
+                    <option>Work</option>
+                    <option>Personal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Due Date</label>
+              <div class="control">
+                <input #taskDueDate class="input" type="number" name="date">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea #taskDescription class="textarea"></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="columns">
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Comments</label>
+              <div class="control">
+                <textarea #taskComments class="textarea"></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- Close columns -->
+      </div>
+    </div>
+  </div>
+</div>

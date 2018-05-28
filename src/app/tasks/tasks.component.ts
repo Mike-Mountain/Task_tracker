@@ -41,15 +41,6 @@ export class TasksComponent implements OnInit {
     this.taskInfoService.getTasks()
       .subscribe(tasks => this.tasks = tasks);
   }
-  
-  add(name: string) {
-    name = name.trim();
-    if (!name) {return;}
-    this.taskInfoService.addTask({name} as Task)
-      .subscribe(task => {
-        this.tasks.push(task);
-      })
-  }
 
   readMore() {
     this.descBox.style.display = "none";
