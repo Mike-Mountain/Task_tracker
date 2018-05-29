@@ -20,6 +20,8 @@ import { SnippetsComponent } from './snippets/snippets.component';
 import { DashSidebarComponent } from './dash-sidebar/dash-sidebar.component';
 import { SingleTaskComponent } from './single-task/single-task.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { SinglePageComponent } from './single-page/single-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     DashSidebarComponent,
     SingleTaskComponent,
     CreateTaskComponent,
+    SinglePageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

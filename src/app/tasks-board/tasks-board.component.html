@@ -1,21 +1,21 @@
 <div class="page">
-  <div class="tile is-ancestor">
+  <div class="tile is-ancestor has-text-centered">
 
     <div class="tile is-parent column-head is-4">
       <div class="tile is-child box">
-        <h3 class="col-head">To Do</h3>
+        <h3 class="col-head subtitle">To Do</h3>
       </div>
     </div>
 
     <div class="tile is-parent column-head is-4">
       <div class="tile is-child box">
-        <h3 class="col-head">In Progress</h3>
+        <h3 class="col-head subtitle">In Progress</h3>
       </div>
     </div>
 
     <div class="tile is-parent column-head is-4">
       <div class="tile is-child box">
-        <h3 class="col-head">Completed</h3>
+        <h3 class="col-head subtitle">Completed</h3>
       </div>
     </div>
   </div>
@@ -23,19 +23,28 @@
   <div class="tile is-ancestor">
     <div class="tile is-parent taskToDo is-4">
       <div class="tile is-child box col-body">
-        <app-tasks ></app-tasks>        
+        <div *ngIf="tasks != null; else noTask">
+          <app-tasks></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </div>
     </div>
 
     <div class="tile is-parent taskInProgress is-4">
       <div class="tile is-child box col-body">
-  
+        <div *ngIf="task; else noTask">
+          <app-tasks></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </div>
     </div>
 
     <div class="tile is-parent taskComplete is-4">
       <div class="tile is-child box col-body">
-
+        <div *ngIf="task; else noTask">
+          <app-tasks></app-tasks>
+        </div>        
+        <ng-template #noTask><h3 class="has-text-centered no-tasks">No Tasks to display</h3></ng-template>
       </div>
     </div>
 
