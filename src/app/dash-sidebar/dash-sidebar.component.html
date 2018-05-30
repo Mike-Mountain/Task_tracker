@@ -24,16 +24,19 @@
         <div class="tasks" id="todo">
           <ul class="dash-tasks">
             <li *ngFor="let task of tasks">
-              <div class="card">
-                <div class="card-header has-text-right">
-                  <button class="delete button is-danger" title="delete task"
-                (click)="delete(task)"></button>
-                </div>
-                <a routerLink="/single-task/{{ task.id }}">
-                  <div class="card-content">
-                    {{ task.Title }}
+              <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                  <div class="tile is-child box inner-tasks">
+                    <div class="btn-link">
+                      <a routerLink="/single-task/{{ task.id }}">
+                        {{ task.Title }}
+                      </a>
+                    </div>
+                    <div class="icon has-text-right del-btn">
+                      <a (click)="delete(task)"><i class="fas fa-minus-circle"></i></a>
+                    </div>
                   </div>
-                </a>
+                </div>
               </div>
             </li>
           </ul>
@@ -54,3 +57,18 @@
     </div>
   </div>
 </div>
+
+
+<!-- 
+  <div class="card">
+                <div class="card-header">
+                  
+                </div>
+                <a routerLink="/single-task/{{ task.id }}">
+                  <div class="card-content">
+                    {{ task.Title }}
+                  </div>
+                </a>
+              </div>
+  
+              <a routerLink="/single-task/{{ task.id }}">-->

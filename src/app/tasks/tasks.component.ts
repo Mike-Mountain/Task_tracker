@@ -26,7 +26,7 @@ export class TasksComponent implements OnInit {
   }
 
   onSelect(task: Task) {
-    if (this.selectedTask === null) {
+    if (this.selectedTask === null || this.selectedTask === undefined) {
       this.selectedTask = task;
     } else {
       this.selectedTask = null;

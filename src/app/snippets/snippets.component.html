@@ -1,7 +1,32 @@
-<ul class="snippets">
-  <li *ngFor="let snippet of snippets">
-    <div class="card">
-      <pre><code class="prettyprint linenums">{{ snippet.snippet }}</code></pre>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child box codesnip-saved">
+      <aside class="menu">
+        <p class="menu-label">
+          Saved Snippets
+        </p>
+        <ul class="snippets">
+          <ng-container *ngFor="let snippet of snippets; let sidx=index">
+            <li>
+              <div class="card" [class.selected]="selectedSnippet === snippet" (click)="onSelect(sidx)">
+                {{ snippet.name }}
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </aside>
     </div>
-  </li>
-</ul>
+  </div>    
+
+  <div class="tile is-parent">
+    <div class="tile is-child box codesnip">
+        <div class="sips" id="snipBox">
+          <ng-container *ngIf="selectedSnippet">
+            <div class="card">
+              <pre><code class="prettyprint">{{ selectedSnippet }}</code></pre>
+            </div>
+          </ng-container>
+        </div>
+    </div>
+  </div>    
+</div>

@@ -1,7 +1,11 @@
-.codesnip-widget {
-    background-color: rgba(95,15,64,0.4);
-}
+// .codesnip-widget {
+//     background-color: rgba(95,15,64,0.4);
+// }
 
 .tile.is-child.codesnip-widget {
     margin: 20px !important;
+}
+
+section.tile.is-ancestor {
+    max-width: 100% !important;
 }

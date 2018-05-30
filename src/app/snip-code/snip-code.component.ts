@@ -1,5 +1,8 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 
+import { Snippet } from '../snippet-template';
+import { SnippetInfoService } from '../snippet-info.service';
+
 @Component({
   selector: 'app-snip-code',
   templateUrl: './snip-code.component.html',
@@ -7,9 +10,27 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 })
 export class SnipCodeComponent implements OnInit {
 
-  constructor() { }
+  snippets: Snippet[] = [];
+
+  selectedSnippet: Snippet;
+
+  constructor(private snippetInfoService: SnippetInfoService) { }
 
   ngOnInit() {
+    this.fetchSnippets();
+  }
+
+  fetchSnippets() {
+    this.snippets = this.snippetInfoService.getSnippets();
+  }
+
+  onSelect(snippet: Snippet) {
+    console.log("selectedSnippet = " + this.selectedSnippet);
+    if(this.selectedSnippet === null) {
+      this.selectedSnippet = snippet;
+    } else {
+      this.selectedSnippet = null;
+    }
   }
 
 }

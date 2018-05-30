@@ -1,5 +1,10 @@
-<div *ngIf = "returnMessageService.messages.length">
-  <h2>Messages:</h2>
-  <button class="clear" (click)="returnMessageService.clear()">clear</button>
-  <div *ngFor="let message of returnMessageService.messages">{{ message }}</div>
-</div>
+<div class="card">
+  <div class="card-body box">
+    <div *ngIf = "returnMessageService.messages.length; else NoMessage">
+      <h2>Messages:</h2>
+      <button class="clear" (click)="returnMessageService.clear()">clear</button>
+      <div *ngFor="let message of returnMessageService.messages">{{ message }}</div>
+    </div>
+    <ng-template #NoMessage><h4 class="has-text-centered">No Messages to display</h4></ng-template>
+  </div>
+</div> 

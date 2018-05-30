@@ -12,10 +12,21 @@ export class SnippetsComponent implements OnInit {
 
   snippets: Snippet[];
 
+  selectedSnippet: string;
+
   constructor(private snippetInfoService: SnippetInfoService,) { }
 
   ngOnInit() {
     this.fetchSnippets();
+  }
+
+  onSelect(sidx) {
+    console.log("selectedSnippet = " + this.selectedSnippet);
+    // if(this.selectedSnippet === null) {
+      this.selectedSnippet = this.snippets[sidx].snippet;
+    // } else {
+    //   this.selectedSnippet = null;
+    // }
   }
 
   fetchSnippets() {

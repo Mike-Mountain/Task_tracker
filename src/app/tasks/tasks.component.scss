@@ -1,9 +1,7 @@
 @import '../../assets/Sass/variables';
 
-.task-details {
-    border: 1px solid $orange;
+.task-card {
     margin: 20px;
-    border-radius: 10px;
     box-shadow: 0 0 1px 1px $orange;
     color: $green;
     // background-color: $light_orange;
@@ -13,7 +11,6 @@
 }
 
 .selected {
-    // background-color: $light_blue !important;
     box-shadow: 0 0 1px 1px $blue !important;
     border-color: $blue !important;
     color: $green !important;
@@ -48,10 +45,27 @@ p.pr-low {
     background-color: #acf48d;
 }
 
-.show-more {
-    width: 100%;
-    border: $orange;
-    box-shadow: 0 0 1px 1px $orange;
+.card-content {
+    padding: .5rem;
+}
+
+.columns {
+    margin: 0;
+}
+
+.cat {
+    padding: .15rem;
+}
+
+.pri {
+    border: 1px solid black;
+    width: 26px;
+    margin-left: 50%;
+    border-radius: 50%;
+}
+
+.date {
+
 }
 
 .modal-card-body {
@@ -64,4 +78,11 @@ p.pr-low {
     margin-left: -30px;
     margin-top: 5px;
     z-index: 9999999;
+}
+
+.card-footer a {
+    color: $orange;
+    &:hover {
+        color: $light_orange;
+    }
 }

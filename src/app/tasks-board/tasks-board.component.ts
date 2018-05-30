@@ -20,7 +20,7 @@ export class TasksBoardComponent implements OnInit {
 
   fetchTasks() {
     this.taskInfoService.getTasks()
-      .subscribe(tasks => this.tasks = tasks);
+      .subscribe(tasks => this.tasks = tasks);//TODO: Add parameter to look for tasks in state "to do".
   }
 
 }
