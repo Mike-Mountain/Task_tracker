@@ -1,4 +1,10 @@
-// .priority-tasks-ancestor {
-//     background-color: rgba(244, 66, 66, 0.6);
-//     // color: rgba(244, 66, 66, 1);
-// }
+@import "../../assets/Sass/inc/variables";
+
+.priority-tasks-ancestor {
+    background: linear-gradient($color-blue-3, $color-blue-4);
+}
+
+
+.level {
+    color: $color-blue-1;
+}

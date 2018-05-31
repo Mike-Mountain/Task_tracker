@@ -1,3 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
  /* Master Styles */
-@import 'variables';
+@import 'inc/variables';
+
+body {
+    background: $color-blue-1;
+}
+
+.box {
+    background-color: $color-blue-5 !important;
+    color: $color-blue-3 !important;
+}
+
+input {
+    // background-color: $color-blue-5 !important;
+    color: $color-blue-3 !important;
+    &:focus, &:active {
+        border-color: $color-blue-3 !important;
+    }
+}
+
+.button {
+    background-color: $color-blue-5 !important;
+    color: $color-blue-3 !important;
+}
+
+aside.sidebar {
+    background: linear-gradient($color-blue-3, $color-blue-4);
+}

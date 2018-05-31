@@ -1,6 +1,8 @@
-// .codesnip-widget {
-//     background-color: rgba(95,15,64,0.4);
-// }
+@import '../../assets/Sass/inc/variables';
+
+.codesnip-widget {
+    background: linear-gradient($color-blue-3, $color-blue-4);
+}
 
 .tile.is-child.codesnip-widget {
     margin: 20px !important;
@@ -8,4 +10,8 @@
 
 section.tile.is-ancestor {
     max-width: 100% !important;
+}
+
+.box {
+    background-color: $color-blue-5;
 }

@@ -1,3 +1,9 @@
-// .recent-tasks-ancestor {
-//     background-color: rgba(65, 244, 68, 0.6)
-// }
+@import '../../assets/Sass/inc/variables';
+
+.recent-tasks-ancestor {
+    background: linear-gradient($color-blue-3, $color-blue-4);
+}
+
+.level {
+    color: $color-blue-1;
+}

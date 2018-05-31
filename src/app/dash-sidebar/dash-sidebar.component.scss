@@ -1,3 +1,5 @@
+@import '../../assets/Sass/inc/variables';
+
 .tabs ul {
     justify-content: center !important;
 }
@@ -7,7 +9,7 @@
 }
 
 .dash-sidebar {
-    // background-color: #6bbaec;
+    background: linear-gradient($color-blue-3, $color-blue-4);
     margin-left: -50px !important;
 }
 
@@ -33,4 +35,8 @@
     &:hover {
         opacity: 0.8;    
     }
+}
+
+a {
+    color: $color-blue-3;
 }
