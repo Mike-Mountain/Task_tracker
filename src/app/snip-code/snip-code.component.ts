@@ -10,7 +10,7 @@ import { SnippetInfoService } from '../snippet-info.service';
 })
 export class SnipCodeComponent implements OnInit {
 
-  snippets: Snippet[] = [];
+  snippets: Snippet[];
 
   selectedSnippet: Snippet;
 
@@ -21,7 +21,8 @@ export class SnipCodeComponent implements OnInit {
   }
 
   fetchSnippets() {
-    this.snippets = this.snippetInfoService.getSnippets();
+    this.snippetInfoService.getSnippets()
+      .subscribe(snippets => this.snippets = snippets);
   }
 
   onSelect(snippet: Snippet) {

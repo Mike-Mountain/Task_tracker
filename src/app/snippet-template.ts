@@ -1,5 +1,6 @@
 export class Snippet {
     id: number;
+    snipId: number;
     snippet: string;
-    name: string;
+    title: string;
 }

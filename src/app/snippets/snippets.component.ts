@@ -21,16 +21,19 @@ export class SnippetsComponent implements OnInit {
   }
 
   onSelect(sidx) {
-    console.log("selectedSnippet = " + this.selectedSnippet);
+    console.log("onSelect(sidx): " + sidx);
     // if(this.selectedSnippet === null) {
       this.selectedSnippet = this.snippets[sidx].snippet;
+      console.log("Snippets = ");
+      console.log(this.selectedSnippet);
     // } else {
     //   this.selectedSnippet = null;
     // }
   }
 
   fetchSnippets() {
-    this.snippets = this.snippetInfoService.getSnippets();
+    this.snippetInfoService.getSnippets()
+      .subscribe(snippets => this.snippets = snippets);
   }
 
 }

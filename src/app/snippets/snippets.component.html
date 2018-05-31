@@ -9,7 +9,7 @@
           <ng-container *ngFor="let snippet of snippets; let sidx=index">
             <li>
               <div class="card" [class.selected]="selectedSnippet === snippet" (click)="onSelect(sidx)">
-                {{ snippet.name }}
+                {{ snippet.title }}
               </div>
             </li>
           </ng-container>
