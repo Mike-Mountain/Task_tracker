@@ -1,9 +1,9 @@
 export class Task {
     id: string;
-    Title: string;
-    Priority: number;
-    Description: string;
-    Category: string;
-    DueDate: string;
-    Comments: string;
+    title: string;
+    priority: number;
+    description: string;
+    category: string;
+    due_date: string;
+    comments: string;
 }

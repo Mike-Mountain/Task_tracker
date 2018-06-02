@@ -4,7 +4,7 @@
       <!-- Card Header -->
       <div class="card-header">
         <p class="card-header-title task-title">
-          {{ task.Title }}
+          {{ task.title }}
         </p>
         <div class="show/hide">
           <div *ngIf="task === selectedTask">
@@ -23,22 +23,22 @@
       <div class="card-content">
         <ng-container *ngIf="task === selectedTask">
           <div class="box task-description" id="descBox">
-            <p>{{ task.Description }}</p>
+            <p>{{ task.description }}</p>
           </div>
         </ng-container>
         <div class="columns">
           <div class="column task-category has-text-centered">
-            <a class="cat button">{{ task.Category }}</a>
+            <a class="cat button">{{ task.category }}</a>
           </div>
           <div class="column task-priority has-text-centered">
-            <p class="pri">{{ task.Priority }}</p>
+            <p class="pri">{{ task.priority }}</p>
           </div>
           <div class="column task-date has-text-centered">
             <p class="date">-Date-</p>
           </div>
         </div>
         <div class="task-id has-text-centered">
-          <p>{{ task.Id }}</p>
+          <p>taskid</p>
         </div>
       </div>
       <!-- Card Footer -->

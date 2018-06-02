@@ -14,7 +14,7 @@ export class SingleTaskComponent implements OnInit {
 
   @Input() task: Task;
 
-  tasks: Task[];
+  tasks: Task[] = [];
 
   constructor(
     private route: ActivatedRoute,

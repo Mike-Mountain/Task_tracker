@@ -10,17 +10,17 @@ import { TaskInfoService } from '../task-info.service';
 })
 export class CreateTaskComponent implements OnInit {
 
-  tasks: Task[];
+  tasks: Task[] = [];
 
   constructor(private taskInfoService: TaskInfoService) { }
 
   ngOnInit() {
   }
 
-  add(Title: string, Priority: number, Description: string, Category: string, DueDate: string, Comments: string) {
-    Title = Title.trim();
-    if (!Title) {return;}
-    this.taskInfoService.addTask({Title, Priority, Description, Category, DueDate, Comments} as Task)
+  add(title: string, priority: number, description: string, category: string, due_date: string, comments: string) {
+    title = title.trim();
+    if (!title) {return;}
+    this.taskInfoService.addTask({title, priority, description, category, due_date, comments} as Task)
       .subscribe(task => {
         this.tasks.push(task);
       })

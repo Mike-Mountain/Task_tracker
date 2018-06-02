@@ -2,16 +2,16 @@
   <div class="card">
     <header calss="card-header">
       <p class="card-header-title">
-        {{task.Title}}
+        {{ task.title }}
       </p>
     </header>
     <div class="card-content">
       <div calss="content">
         <h4 class="task-summary">Summary:</h4><br>
-        {{task.Description}}
+        {{task.description}}
       </div>
       <label>summary: 
-        <input [(ngModel)] = "task.Description" placeholder = "Summary">
+        <input [(ngModel)] = "task.acf.description" placeholder = "Summary">
       </label>
     </div>
   </div>

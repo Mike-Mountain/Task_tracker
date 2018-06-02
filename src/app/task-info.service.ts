@@ -25,8 +25,8 @@ export class TaskInfoService {
     this.returnMessageService.add('TaskService says: ' + message);
   }
 
-  private tasksUrl = 'http://localhost:1337/task';
-  private taskId = 'http://localhost:1337/task/5afc8109c47ac03c8f61a56c';
+  private tasksUrl = 'https://ancient-lowlands-23604.herokuapp.com/task';
+  private taskId = 'https://ancient-lowlands-23604.herokuapp.com/task';
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksUrl)
@@ -85,7 +85,7 @@ export class TaskInfoService {
     
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-    
+      
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
     

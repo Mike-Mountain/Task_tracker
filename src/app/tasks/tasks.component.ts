@@ -11,7 +11,7 @@ import { TaskInfoService } from '../task-info.service';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: Task[];
+  tasks: Task[] = [];
 
   selectedTask: Task;
 
@@ -23,6 +23,8 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
     this.fetchTasks();
+    console.log('this.tasks= ');
+    console.log(this.tasks);
   }
 
   onSelect(task: Task) {

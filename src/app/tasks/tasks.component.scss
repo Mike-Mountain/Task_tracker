@@ -24,12 +24,7 @@
     color: $blue
 }
 
-p.priority {
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 25px;
-    margin-left: 40%;
-}
+
 p.pr-high {
     border-color: #980000;
     background-color: rgb(204, 97, 97);
@@ -57,12 +52,6 @@ p.pr-low {
     padding: .15rem;
 }
 
-.pri {
-    border: 1px solid black;
-    width: 26px;
-    margin-left: 50%;
-    border-radius: 50%;
-}
 
 .date {
 
