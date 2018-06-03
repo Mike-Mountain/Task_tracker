@@ -33,8 +33,8 @@
           <div class="column task-priority has-text-centered">
             <p class="pri">{{ task.priority }}</p>
           </div>
-          <div class="column task-date has-text-centered">
-            <p class="date">-Date-</p>
+          <div class="column task-status has-text-centered">
+            <p class="date">{{ task.progress }}</p>
           </div>
         </div>
         <div class="task-id has-text-centered">
@@ -44,7 +44,7 @@
       <!-- Card Footer -->
       <footer class="card-footer">
         <a (click)="toggleModal()" class="card-footer-item">Open</a>
-        <a (click)="delete()" class="card-footer-item">Edit</a>
+        <a class="card-footer-item">Update</a>
         <a class="card-footer-item">Delete</a>
       </footer>
     </div>
@@ -63,4 +63,3 @@
     aria-label="close" 
     (click)="toggleModal()"></button>
 </div>
-

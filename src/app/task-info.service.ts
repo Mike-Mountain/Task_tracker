@@ -25,8 +25,8 @@ export class TaskInfoService {
     this.returnMessageService.add('TaskService says: ' + message);
   }
 
-  private tasksUrl = 'https://ancient-lowlands-23604.herokuapp.com/task';
-  private taskId = 'https://ancient-lowlands-23604.herokuapp.com/task';
+  private tasksUrl = 'http://localhost:1337/task';
+  private taskId = 'http://localhost:1337/task';
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksUrl)

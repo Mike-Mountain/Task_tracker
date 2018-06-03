@@ -6,4 +6,5 @@ export class Task {
     category: string;
     due_date: string;
     comments: string;
+    progress: string;
 }

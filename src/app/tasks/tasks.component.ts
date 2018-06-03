@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { Task } from '../task-template';
@@ -11,7 +11,7 @@ import { TaskInfoService } from '../task-info.service';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: Task[] = [];
+  @Input() tasks: Task[] = [];
 
   selectedTask: Task;
 
@@ -22,8 +22,7 @@ export class TasksComponent implements OnInit {
   constructor(private taskInfoService: TaskInfoService) { }
 
   ngOnInit() {
-    this.fetchTasks();
-    console.log('this.tasks= ');
+    console.log('taskComponent.ngOninit');
     console.log(this.tasks);
   }
 
@@ -39,10 +38,10 @@ export class TasksComponent implements OnInit {
     this.isModalActive = !this.isModalActive;
   }
 
-  fetchTasks() {
-    this.taskInfoService.getTasks()
-      .subscribe(tasks => this.tasks = tasks);
-  }
+  // fetchTasks() {
+  //   this.taskInfoService.getTasks()
+  //     .subscribe(tasks => this.tasks = tasks);
+  // }
 
   readMore() {
     this.descBox.style.display = "none";
